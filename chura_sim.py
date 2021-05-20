@@ -23,7 +23,7 @@ def dV1dt(V1, V2):
 
 def dV2dt(V1, V2, I3):
     """Given instantanous V1, V2, and i3, returns the instantaneous change in V2"""
-    return (1/C2) * (((V1 - V2)/R) - I3)
+    return (1/C2) * (((V1 - V2)/R) + I3)
 
 def dI3dt(V2, I3):
     """Given instantaneous V2 and I3, returns the instantaneous change in I3"""
@@ -62,7 +62,7 @@ V1_over_time = np.empty(num_steps)
 V2_over_time = np.empty(num_steps)
 I3_over_time = np.empty(num_steps)
 
-V1, V2, I3 = -10e-6, 1.3, 0.001
+V1, V2, I3 = 1, 1, 1
 
 for i in range(num_steps):
     #Find approximate slopes
